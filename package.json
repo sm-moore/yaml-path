@@ -10,14 +10,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:yaml-path.showPath"
+    "*"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "yaml-path.showPath",
-        "title": "Hello World"
+        "title": "YAML Path"
       }
     ]
   },
