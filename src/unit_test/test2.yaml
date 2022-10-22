@@ -1,0 +1,32 @@
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: m-name
+  namespace: m-namespace
+spec:
+  dataFrom:
+    - extract:
+        key: secret1
+  refreshInterval: 5s
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: secret-store-name
+  target:
+    name: target-name
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: m-name2
+  namespace: m-namespace2
+spec:
+  dataFrom:
+    - extract:
+        key: secret2
+  refreshInterval: 5s
+  target:
+    name: target-name2
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: secret-store-name

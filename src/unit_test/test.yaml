@@ -1,0 +1,7 @@
+cluster: cluster-name
+serviceAccount:
+  create: false
+  name: sa-name
+envFrom:
+  - secretRef:
+      name: secret
