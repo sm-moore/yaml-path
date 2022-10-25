@@ -4,50 +4,22 @@ Displays the key path to the line your cursor is on in the status bar.
 
 ## Features
 
-TODO: Add some pictures
+Show the yaml path for the current selected line. ![shows_path](shows_yaml_path.png)
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+When clicked the yaml path is added to the clipboard. ![clipboard](copies_to_clipboard.png)
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+This extension has no settings
 
 ## Known Issues
+
+- When on a line starting with `---` the path displayed is incorrect.
+
+---
 
 ## Release Notes
 
 ### 1.0.0
 
 Initial release
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
