@@ -8,7 +8,7 @@ export class StatusBarView {
     
     constructor(statusBarItem: StatusBarItem) {
         this._statusBarItem = statusBarItem;
-        this._statusBarItem.command = "yaml-path.showPath";
+        this._statusBarItem.command = "yaml-path.copyPath";
     };
     
     refresh(text: string) {
@@ -21,9 +21,11 @@ export class StatusBarView {
 export class StatusBarController {
 
     private _disposable: Disposable;
+    currentPath: {};
 
-    constructor(private view: StatusBarView) {
+    constructor(private view: StatusBarView, currentPath: {}) {
         const self = this;
+        this.currentPath = currentPath;
 
         const disposables: Disposable[] = [];
 
@@ -41,7 +43,9 @@ export class StatusBarController {
         const doc = editor.document;
         if (!doc) {return;}
 
-        this.show(parse(editor));
+        const yamlPath = parse(editor);
+        this.currentPath['path'] = yamlPath;
+        this.show(yamlPath);
     }
 
     onTextEditorSelectionChange(textEditorSelectionChangeEvent: TextEditorSelectionChangeEvent) : void {
@@ -53,7 +57,7 @@ export class StatusBarController {
     }
 
     show(parsedYaml: string) : void {
-        this.view.refresh('Path ' + parsedYaml);
+        this.view.refresh(parsedYaml);
     }
 
     dispose() {
